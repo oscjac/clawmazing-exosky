@@ -1,8 +1,8 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  margin: 0;
+  padding: 0;
   text-align: center;
+  background: var(--space-black);
 }
 
 .logo {
@@ -39,4 +39,55 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.solar-grid {
+  width: calc(100vw - 60px);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  padding: 15px 30px;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.solar-grid div {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-self: stretch;
+  background: #636262;
+  border-radius: 5px;
+}
+
+.solar-element {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.title {
+  font-size: 1.5em;
+  color: #fff;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+}
+
+@keyframes orbit {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+.planet {
+  transform-origin: center;
+}
+
+.orbit-path {
+  transform-origin: 350px 350px;
 }
