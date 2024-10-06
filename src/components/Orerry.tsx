@@ -2,13 +2,13 @@ import { useState, useEffect, useRef, FC } from 'react';
 import { X } from 'lucide-react';
 import * as THREE from 'three';
 import { ExoplanetDetail, StarDetail, StarExoplanet } from '@/include/data';
-import { Exoplanets } from '.';
 import { Howl } from 'howler';
 import { OrbitControls } from 'three/examples/jsm/Addons.js';
+import { ExpressionNode } from 'three/webgpu';
 
 type OrerryProps = {
     systemData: StarDetail;
-    exoplanets: Exoplanets;
+    exoplanets: { [key: string]: ExoplanetDetail | undefined };
     onClose: () => void;
 }
 
@@ -25,17 +25,17 @@ const format = (num: number | undefined, places: number = 3) => {
     });
 }
 
-let colors: THREE.Color[] = [
-    new THREE.Color(79 / 256, 76 / 256, 176 / 256),
-    new THREE.Color(107 / 256, 147 / 256, 214 / 256),
-    new THREE.Color(233 / 256, 239 / 256, 249 / 256),
-    new THREE.Color(159 / 256, 193 / 256, 100 / 256),
-    new THREE.Color(216 / 256, 197 / 256, 150 / 256),
-]
-
 const Orrery: FC<OrerryProps> = ({ systemData, exoplanets, onClose }) => {
     const mountRef = useRef<HTMLDivElement>(null);
     const [selectedPlanet, setSelectedPlanet] = useState<ExoplanetDetail | undefined>();
+
+    let colors: THREE.Color[] = [
+        new THREE.Color(79 / 256, 76 / 256, 176 / 256),
+        new THREE.Color(107 / 256, 147 / 256, 214 / 256),
+        new THREE.Color(233 / 256, 239 / 256, 249 / 256),
+        new THREE.Color(159 / 256, 193 / 256, 100 / 256),
+        new THREE.Color(216 / 256, 197 / 256, 150 / 256),
+    ]
 
     const maxOrbit = Math.max(...systemData.allExo.map(p => p.dist_from_star || 0));
     const scaleFactor = 10 / maxOrbit;
@@ -71,8 +71,12 @@ const Orrery: FC<OrerryProps> = ({ systemData, exoplanets, onClose }) => {
         const createPlanet = (planetData: StarExoplanet) => {
             const { dist_from_star, period, name } = planetData;
 
+            const exoplanet = exoplanets[name];
+
+            if (!exoplanet) return null;
+
             // Normalize radius and distance
-            const scaledRadius = exoplanets[name].radius;
+            const scaledRadius = exoplanet.radius;
             const scaledDistance = dist_from_star * scaleFactor;
 
             const planetGeometry = new THREE.SphereGeometry(scaledRadius, 32, 32);
@@ -101,7 +105,7 @@ const Orrery: FC<OrerryProps> = ({ systemData, exoplanets, onClose }) => {
             return { planet, pivot, period, name };
         };
 
-        const planets = systemData.allExo.map(createPlanet);
+        const planets = systemData.allExo.map(createPlanet).filter(p => p !== null);
 
         // Camera position and rotation
         const distance = 30;
@@ -142,7 +146,9 @@ const Orrery: FC<OrerryProps> = ({ systemData, exoplanets, onClose }) => {
         const animate = () => {
             requestAnimationFrame(animate);
 
-            planets.forEach(({ pivot, period }) => {
+            planets.forEach(planet => {
+                if (!planet) return;
+                const { pivot, period } = planet;
                 const speed = 0.01 / (period || 1);
                 pivot.rotation.y += speed;
             });
@@ -170,6 +176,13 @@ const Orrery: FC<OrerryProps> = ({ systemData, exoplanets, onClose }) => {
             currentMount.removeChild(renderer.domElement);
         };
     }, [systemData]);
+
+    const handleRedirect = (planet: ExoplanetDetail) => {
+        const SERVER = 'https://9e8d4b9f1ed5.ngrok.app/';
+        const with_params = `${SERVER}/?name=${planet.name}`
+
+        window.open(encodeURI(with_params), '_blank');
+    }
 
     return (
         <div style={{ position: 'relative', width: '100vw', height: '100vh' }}>
@@ -218,6 +231,9 @@ const Orrery: FC<OrerryProps> = ({ systemData, exoplanets, onClose }) => {
                     <p>Radius: {format(selectedPlanet.radius)} Earth radii</p>
                     <p>Period: {format(selectedPlanet.period)} days</p>
                     <p>Distance from star: {format(systemData.allExo.find(p => p.name == selectedPlanet.name)?.dist_from_star)} AU</p>
+                    <button onClick={() => handleRedirect(selectedPlanet)}>
+                        Visit this planet!
+                    </button>
                 </div>
             )}
             <button
