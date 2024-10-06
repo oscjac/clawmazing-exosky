@@ -1,13 +1,12 @@
 import './App.css';
 import { useEffect, useState, FC } from 'react';
-import { ExoplanetDetail, StarDetail } from './include/data';
+import { ExoplanetDetail, StarDetail, StarExoplanet } from './include/data';
 import { SolarPreview } from './components';
 import { Title } from './components/Title';
 import { X } from 'lucide-react';
 import { Howl } from 'howler'
-
-type Exoplanets = { [key: string]: ExoplanetDetail };
-type StarData = { [key: string]: StarDetail };
+import { Exoplanets, StarData } from './components';
+import Orrery from '@/components/Orerry';
 
 const planetsIn = (host: string, data: Exoplanets, starData: StarData): ExoplanetDetail[] => {
     const star = starData[host];
@@ -18,13 +17,15 @@ const planetsIn = (host: string, data: Exoplanets, starData: StarData): Exoplane
 }
 
 interface SolarSystemProps {
-    planets: ExoplanetDetail[];
+    system: StarDetail;
+    planets: Exoplanets;
     host: string;
+    navigateHome: () => void;
 }
 
 const landingSound = new Howl({
     src: ['/landing.mp3'],
-  });
+});
 
 const SolarSystem: FC<SolarSystemProps> = props => {
     const [selectedPlanet, setSelectedPlanet] = useState<ExoplanetDetail | null>(null);
@@ -32,17 +33,24 @@ const SolarSystem: FC<SolarSystemProps> = props => {
     const svgHeight = window.innerHeight;
     const centerX = svgWidth / 2;
     const centerY = svgHeight / 2;
-    const maxOrbit = Math.max(...props.planets.map(p => p.edistance || 0));
+    const maxOrbit = Math.max(...props.system.allExo.map(p => p.dist_from_star || 0));
     const scaleFactor = Math.min(svgWidth, svgHeight) / 2 / maxOrbit;
 
-    const renderPlanet = (planet: ExoplanetDetail, idx: number) => {
-        if (!planet.edistance) {
+    const handleClick = (planet: StarExoplanet) => {
+        landingSound.play();
+        // Find the planet in the list of all exoplanets
+        const this_planet = props.planets[planet.name];
+        setSelectedPlanet(this_planet);
+    }
+
+    const renderPlanet = (planet: StarExoplanet, idx: number) => {
+        if (!planet.dist_from_star) {
             return null;
         }
 
-        const orbit = (planet.edistance || 0) * scaleFactor;
+        const orbit = (planet.dist_from_star || 0) * scaleFactor;
         const radius = Math.max(10, Math.log(planet.radius || 1) * 5);
-        const angle = (idx / props.planets.length) * 2 * Math.PI;
+        const angle = (idx / props.system.allExo.length) * 2 * Math.PI;
         const x = centerX + orbit * Math.cos(angle);
         const y = centerY + orbit * Math.sin(angle);
         const animationDuration = (planet.period || 365) * 10;
@@ -54,7 +62,7 @@ const SolarSystem: FC<SolarSystemProps> = props => {
                     cx={x}
                     cy={y}
                     r={radius}
-                    onClick={() => {landingSound.play();setSelectedPlanet(planet);}}
+                    onClick={() => handleClick(planet)}
                     style={{
                         animationDuration: `${animationDuration}s`,
                         transformOrigin: `${centerX}px ${centerY}px`
@@ -71,28 +79,14 @@ const SolarSystem: FC<SolarSystemProps> = props => {
     };
 
     return (
-        <div className="solar-system-container">
-            <svg width={svgWidth} height={svgHeight} viewBox={`0 0 ${svgWidth} ${svgHeight}`}>
+        <div>
+            {/* <svg width={svgWidth} height={svgHeight} viewBox={`0 0 ${svgWidth} ${svgHeight}`}>
                 <rect width={svgWidth} height={svgHeight} className="space-background" 
                 onClick={() => setSelectedPlanet(null)}/>
                 <circle cx={centerX} cy={centerY} r="20" className="star" />
-                {props.planets.map(renderPlanet)}
-            </svg>
-            {selectedPlanet && (
-                <div className="planet-details-panel">
-                    <button 
-                        className="close-button"
-                        onClick={() => setSelectedPlanet(null)}
-                    >
-                        <X size={24} />
-                    </button>
-                    <h3>{selectedPlanet.name}</h3>
-                    <p>Radius: {selectedPlanet.radius} Earth radii</p>
-                    <p>Mass: {selectedPlanet.mass} Earth masses</p>
-                    <p>Period: {selectedPlanet.period} days</p>
-                    <p>Distance from star: {selectedPlanet.edistance} AU</p>
-                </div>
-            )}
+                {props.system.allExo.map(renderPlanet)}
+            </svg> */}
+            <Orrery systemData={props.system} exoplanets={props.planets} onClose={props.navigateHome} />
         </div>
     );
 }
@@ -109,29 +103,35 @@ interface SolarGridProps {
 
 const SolarGrid: FC<SolarGridProps> = props => {
     return (
-        <div className='solar-grid'>
-            {props.chunks.slice(0, props.n).map((hosts, index) =>
-                <div key={index}>
-                    {hosts.map((host, index) =>
-                        <SolarPreview
-                            key={index}
-                            host={host}
-                            planets={planetsIn(host, props.data, props.starData)}
-                            setSystem={props.setSystem} />
-                    )}
-                </div>
-            )}
+        <div>
+            <h1>
+                Solar Systems
+            </h1>
+            <div className='solar-grid'>
+                {props.chunks.slice(0, props.n).map((hosts, index) =>
+                    <div key={index}>
+                        {hosts.map((host, index) =>
+                            <SolarPreview
+                                key={index}
+                                host={host}
+                                planets={planetsIn(host, props.data, props.starData)}
+                                setSystem={props.setSystem} />
+                        )}
+                    </div>
+                )}
+            </div>
         </div>
     );
 }
 
 const exitSound = new Howl({
     src: ['/exit.mp3'],
-  });
+});
 
 function App() {
     const [exoplanetData, setExoplanets] = useState<Exoplanets>({});
     const [starData, setStars] = useState<StarData>({});
+    const [selectedSystem, setSelectedSystem] = useState<string | undefined>();
     const [title, setTitle] = useState<string>('Solar systems');
     const [system, setSystem] = useState<string | undefined>();
 
@@ -165,12 +165,11 @@ function App() {
 
     return (
         <div className="app-container">
-            <Title navigateHome={() => { exitSound.play(); setSystem(undefined); setTitle('Solar systems'); }}>
-                ExpoSky by
-            </Title>
-            <h1>{title}</h1>
             {
                 system === undefined && starData &&
+                <Title navigateHome={() => { exitSound.play(); setSystem(undefined); setTitle('Solar systems'); }}>
+                    ExpoSky by
+                </Title> &&
                 <SolarGrid
                     hosts={hosts}
                     starData={starData}
@@ -181,7 +180,11 @@ function App() {
             }
             {
                 system && exoplanetData && starData &&
-                <SolarSystem host={system} planets={planetsIn(system, exoplanetData, starData)} />
+                <SolarSystem
+                    host={system}
+                    system={starData[system]}
+                    planets={exoplanetData}
+                    navigateHome={() => { exitSound.play(); setSystem(undefined); setTitle('Solar systems') }} />
             }
         </div>
     );
