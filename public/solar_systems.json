@@ -1,0 +1,731 @@
+{
+    "GJ 1002": {
+        "name": "GJ 1002",
+        "radius": 54.560602884510004,
+        "starMass": 8.79138e+29,
+        "allExo": [
+            {
+                "name": "GJ 1002 b",
+                "radius": 0.0,
+                "period": 10.3465,
+                "home_star": "GJ 1002",
+                "dist_from_star": 5417555.360495775
+            },
+            {
+                "name": "GJ 1002 c",
+                "radius": 0.0,
+                "period": 21.202,
+                "home_star": "GJ 1002",
+                "dist_from_star": 8740285.18435522
+            }
+        ],
+        "numPlanets": 2
+    },
+    "GJ 180": {
+        "name": "GJ 180",
+        "radius": 54.560602884510004,
+        "starMass": 8.79138e+29,
+        "allExo": [
+            {
+                "name": "GJ 180 b",
+                "radius": 0.0,
+                "period": 17.2565,
+                "home_star": "GJ 180",
+                "dist_from_star": 7619202.690418434
+            },
+            {
+                "name": "GJ 180 c",
+                "radius": 0.0,
+                "period": 24.329,
+                "home_star": "GJ 180",
+                "dist_from_star": 9579817.202513017
+            },
+            {
+                "name": "GJ 180 d",
+                "radius": 0.0,
+                "period": 106.3,
+                "home_star": "GJ 180",
+                "dist_from_star": 25603336.232814066
+            }
+        ],
+        "numPlanets": 3
+    },
+    "GJ 3293": {
+        "name": "GJ 3293",
+        "radius": 54.560602884510004,
+        "starMass": 8.79138e+29,
+        "allExo": [
+            {
+                "name": "GJ 3293 b",
+                "radius": 0.0,
+                "period": 30.59935,
+                "home_star": "GJ 3293",
+                "dist_from_star": 11162184.17368924
+            },
+            {
+                "name": "GJ 3293 c",
+                "radius": 0.0,
+                "period": 123.1848,
+                "home_star": "GJ 3293",
+                "dist_from_star": 28247442.398656223
+            },
+            {
+                "name": "GJ 3293 d",
+                "radius": 0.0,
+                "period": 48.1345,
+                "home_star": "GJ 3293",
+                "dist_from_star": 15097742.935417216
+            },
+            {
+                "name": "GJ 3293 e",
+                "radius": 0.0,
+                "period": 13.2543,
+                "home_star": "GJ 3293",
+                "dist_from_star": 6390167.577975693
+            }
+        ],
+        "numPlanets": 4
+    },
+    "GJ 357": {
+        "name": "GJ 357",
+        "radius": 54.560602884510004,
+        "starMass": 8.79138e+29,
+        "allExo": [
+            {
+                "name": "GJ 357 b",
+                "radius": 0.92175,
+                "period": 3.9306364250000003,
+                "home_star": "GJ 357",
+                "dist_from_star": 2841731.007950942
+            },
+            {
+                "name": "GJ 357 c",
+                "radius": 0.0,
+                "period": 9.1247,
+                "home_star": "GJ 357",
+                "dist_from_star": 4982188.019215691
+            },
+            {
+                "name": "GJ 357 d",
+                "radius": 0.0,
+                "period": 55.661,
+                "home_star": "GJ 357",
+                "dist_from_star": 16633171.021190029
+            }
+        ],
+        "numPlanets": 3
+    },
+    "GJ 367": {
+        "name": "GJ 367",
+        "radius": 54.560602884510004,
+        "starMass": 8.79138e+29,
+        "allExo": [
+            {
+                "name": "GJ 367 b",
+                "radius": 1.359333333333333,
+                "period": 0.3219359333333333,
+                "home_star": "GJ 367",
+                "dist_from_star": 535945.5703075512
+            },
+            {
+                "name": "GJ 367 c",
+                "radius": 0.0,
+                "period": 11.5301,
+                "home_star": "GJ 367",
+                "dist_from_star": 5823218.675313868
+            },
+            {
+                "name": "GJ 367 d",
+                "radius": 0.0,
+                "period": 34.369,
+                "home_star": "GJ 367",
+                "dist_from_star": 12061064.702862132
+            }
+        ],
+        "numPlanets": 3
+    },
+    "GJ 433": {
+        "name": "GJ 433",
+        "radius": 54.560602884510004,
+        "starMass": 8.79138e+29,
+        "allExo": [
+            {
+                "name": "GJ 433 b",
+                "radius": 0.0,
+                "period": 7.3705,
+                "home_star": "GJ 433",
+                "dist_from_star": 4321213.095702498
+            },
+            {
+                "name": "GJ 433 c",
+                "radius": 0.0,
+                "period": 4247.0525,
+                "home_star": "GJ 433",
+                "dist_from_star": 299226098.21759325
+            },
+            {
+                "name": "GJ 433 d",
+                "radius": 0.0,
+                "period": 36.059,
+                "home_star": "GJ 433",
+                "dist_from_star": 12453272.813007446
+            }
+        ],
+        "numPlanets": 3
+    },
+    "GJ 667 C": {
+        "name": "GJ 667 C",
+        "radius": 54.560602884510004,
+        "starMass": 8.79138e+29,
+        "allExo": [
+            {
+                "name": "GJ 667 C b",
+                "radius": 0.0,
+                "period": 7.200792,
+                "home_star": "GJ 667 C",
+                "dist_from_star": 4254624.409203158
+            },
+            {
+                "name": "GJ 667 C c",
+                "radius": 0.0,
+                "period": 28.134500000000003,
+                "home_star": "GJ 667 C",
+                "dist_from_star": 10554407.324209332
+            },
+            {
+                "name": "GJ 667 C e",
+                "radius": 0.0,
+                "period": 62.24,
+                "home_star": "GJ 667 C",
+                "dist_from_star": 17919288.949523974
+            },
+            {
+                "name": "GJ 667 C f",
+                "radius": 0.0,
+                "period": 39.026,
+                "home_star": "GJ 667 C",
+                "dist_from_star": 13127350.368471704
+            },
+            {
+                "name": "GJ 667 C g",
+                "radius": 0.0,
+                "period": 256.2,
+                "home_star": "GJ 667 C",
+                "dist_from_star": 46025000.31662321
+            }
+        ],
+        "numPlanets": 5
+    },
+    "GJ 682": {
+        "name": "GJ 682",
+        "radius": 54.560602884510004,
+        "starMass": 8.79138e+29,
+        "allExo": [
+            {
+                "name": "GJ 682 b",
+                "radius": 0.0,
+                "period": 17.478,
+                "home_star": "GJ 682",
+                "dist_from_star": 7684262.753140177
+            },
+            {
+                "name": "GJ 682 c",
+                "radius": 0.0,
+                "period": 57.32,
+                "home_star": "GJ 682",
+                "dist_from_star": 16962056.456254736
+            }
+        ],
+        "numPlanets": 2
+    },
+    "HD 216520": {
+        "name": "HD 216520",
+        "radius": 98.20908519211801,
+        "starMass": 1.4837940000000001e+30,
+        "allExo": [
+            {
+                "name": "HD 216520 b",
+                "radius": 0.0,
+                "period": 35.458,
+                "home_star": "HD 216520",
+                "dist_from_star": 14661870.963944605
+            },
+            {
+                "name": "HD 216520 c",
+                "radius": 0.0,
+                "period": 154.43,
+                "home_star": "HD 216520",
+                "dist_from_star": 39102184.16995786
+            }
+        ],
+        "numPlanets": 2
+    },
+    "HIP 38594": {
+        "name": "HIP 38594",
+        "radius": 54.560602884510004,
+        "starMass": 8.79138e+29,
+        "allExo": [
+            {
+                "name": "HIP 38594 b",
+                "radius": 0.0,
+                "period": 60.722,
+                "home_star": "HIP 38594",
+                "dist_from_star": 17626730.379467245
+            },
+            {
+                "name": "HIP 38594 c",
+                "radius": 0.0,
+                "period": 3477.768,
+                "home_star": "HIP 38594",
+                "dist_from_star": 261903591.88729557
+            }
+        ],
+        "numPlanets": 2
+    },
+    "K2-18": {
+        "name": "K2-18",
+        "radius": 54.560602884510004,
+        "starMass": 8.79138e+29,
+        "allExo": [
+            {
+                "name": "K2-18 b",
+                "radius": 2.0261,
+                "period": 32.940080505,
+                "home_star": "K2-18",
+                "dist_from_star": 11724405.23532165
+            },
+            {
+                "name": "K2-18 c",
+                "radius": 0.0,
+                "period": 8.962,
+                "home_star": "K2-18",
+                "dist_from_star": 4922786.598269651
+            }
+        ],
+        "numPlanets": 2
+    },
+    "K2-9": {
+        "name": "K2-9",
+        "radius": 54.560602884510004,
+        "starMass": 8.79138e+29,
+        "allExo": [
+            {
+                "name": "K2-9 b",
+                "radius": 3.174,
+                "period": 18.448838600000002,
+                "home_star": "K2-9",
+                "dist_from_star": 7966246.44206802
+            }
+        ],
+        "numPlanets": 1
+    },
+    "Kepler-1410": {
+        "name": "Kepler-1410",
+        "radius": 98.20908519211801,
+        "starMass": 1.4837940000000001e+30,
+        "allExo": [
+            {
+                "name": "Kepler-1410 b",
+                "radius": 1.141,
+                "period": 60.866783697,
+                "home_star": "Kepler-1410",
+                "dist_from_star": 21020036.780108217
+            }
+        ],
+        "numPlanets": 1
+    },
+    "Kepler-1540": {
+        "name": "Kepler-1540",
+        "radius": 98.20908519211801,
+        "starMass": 1.4837940000000001e+30,
+        "allExo": [
+            {
+                "name": "Kepler-1540 b",
+                "radius": 1.9,
+                "period": 109.736526555,
+                "home_star": "Kepler-1540",
+                "dist_from_star": 31137282.6456488
+            }
+        ],
+        "numPlanets": 1
+    },
+    "Kepler-1544": {
+        "name": "Kepler-1544",
+        "radius": 98.20908519211801,
+        "starMass": 1.4837940000000001e+30,
+        "allExo": [
+            {
+                "name": "Kepler-1544 b",
+                "radius": 1.2434999999999998,
+                "period": 151.930022792,
+                "home_star": "Kepler-1544",
+                "dist_from_star": 38679035.67301543
+            }
+        ],
+        "numPlanets": 1
+    },
+    "Kepler-1606": {
+        "name": "Kepler-1606",
+        "radius": 109.12120576902001,
+        "starMass": 1.9890000000000002e+30,
+        "allExo": [
+            {
+                "name": "Kepler-1606 b",
+                "radius": 1.4588,
+                "period": 176.79270934200002,
+                "home_star": "Kepler-1606",
+                "dist_from_star": 47182019.712652855
+            }
+        ],
+        "numPlanets": 1
+    },
+    "Kepler-1649": {
+        "name": "Kepler-1649",
+        "radius": 54.560602884510004,
+        "starMass": 8.79138e+29,
+        "allExo": [
+            {
+                "name": "Kepler-1649 b",
+                "radius": 1.1121249999999998,
+                "period": 8.689089692500001,
+                "home_star": "Kepler-1649",
+                "dist_from_star": 4822333.443938874
+            },
+            {
+                "name": "Kepler-1649 c",
+                "radius": 0.53,
+                "period": 19.535260066666666,
+                "home_star": "Kepler-1649",
+                "dist_from_star": 8276000.623380778
+            }
+        ],
+        "numPlanets": 2
+    },
+    "Kepler-1653": {
+        "name": "Kepler-1653",
+        "radius": 54.560602884510004,
+        "starMass": 8.79138e+29,
+        "allExo": [
+            {
+                "name": "Kepler-1653 b",
+                "radius": 1.45975,
+                "period": 122.7205393875,
+                "home_star": "Kepler-1653",
+                "dist_from_star": 28176424.83686165
+            }
+        ],
+        "numPlanets": 1
+    },
+    "Kepler-283": {
+        "name": "Kepler-283",
+        "radius": 98.20908519211801,
+        "starMass": 1.4837940000000001e+30,
+        "allExo": [
+            {
+                "name": "Kepler-283 b",
+                "radius": 2.1818461538461538,
+                "period": 9.314601632307692,
+                "home_star": "Kepler-283",
+                "dist_from_star": 6013898.487061902
+            },
+            {
+                "name": "Kepler-283 c",
+                "radius": 13.204666666666668,
+                "period": 77.28960296749999,
+                "home_star": "Kepler-283",
+                "dist_from_star": 24648696.280387506
+            }
+        ],
+        "numPlanets": 2
+    },
+    "Kepler-296": {
+        "name": "Kepler-296",
+        "radius": 54.560602884510004,
+        "starMass": 8.79138e+29,
+        "allExo": [
+            {
+                "name": "Kepler-296 b",
+                "radius": 10.801928571428572,
+                "period": 7.760318399285715,
+                "home_star": "Kepler-296",
+                "dist_from_star": 4472263.772137778
+            },
+            {
+                "name": "Kepler-296 c",
+                "radius": 1.3963999999999999,
+                "period": 5.0627761546666665,
+                "home_star": "Kepler-296",
+                "dist_from_star": 3364084.276844748
+            },
+            {
+                "name": "Kepler-296 d",
+                "radius": 1.4276000000000002,
+                "period": 17.20356300533333,
+                "home_star": "Kepler-296",
+                "dist_from_star": 7603612.654173683
+            },
+            {
+                "name": "Kepler-296 e",
+                "radius": 1.0315384615384615,
+                "period": 31.515720945384615,
+                "home_star": "Kepler-296",
+                "dist_from_star": 11383938.673182292
+            },
+            {
+                "name": "Kepler-296 f",
+                "radius": 1.2591666666666668,
+                "period": 58.05847744249999,
+                "home_star": "Kepler-296",
+                "dist_from_star": 17107431.571936037
+            }
+        ],
+        "numPlanets": 5
+    },
+    "Kepler-452": {
+        "name": "Kepler-452",
+        "radius": 109.12120576902001,
+        "starMass": 1.9890000000000002e+30,
+        "allExo": [
+            {
+                "name": "Kepler-452 b",
+                "radius": 1.1435,
+                "period": 320.704026,
+                "home_star": "Kepler-452",
+                "dist_from_star": 70178363.19521138
+            }
+        ],
+        "numPlanets": 1
+    },
+    "Kepler-705": {
+        "name": "Kepler-705",
+        "radius": 54.560602884510004,
+        "starMass": 8.79138e+29,
+        "allExo": [
+            {
+                "name": "Kepler-705 b",
+                "radius": 1.5524545454545453,
+                "period": 50.96007955272728,
+                "home_star": "Kepler-705",
+                "dist_from_star": 15682950.851135585
+            }
+        ],
+        "numPlanets": 1
+    },
+    "LHS 1140": {
+        "name": "LHS 1140",
+        "radius": 54.560602884510004,
+        "starMass": 8.79138e+29,
+        "allExo": [
+            {
+                "name": "LHS 1140 b",
+                "radius": 1.3943333333333336,
+                "period": 24.73713336,
+                "home_star": "LHS 1140",
+                "dist_from_star": 9686657.928781353
+            },
+            {
+                "name": "LHS 1140 c",
+                "radius": 1.0577999999999999,
+                "period": 3.77793313,
+                "home_star": "LHS 1140",
+                "dist_from_star": 2767646.1319458243
+            }
+        ],
+        "numPlanets": 2
+    },
+    "LP 890-9": {
+        "name": "LP 890-9",
+        "radius": 54.560602884510004,
+        "starMass": 8.79138e+29,
+        "allExo": [
+            {
+                "name": "LP 890-9 b",
+                "radius": 1.3355000000000001,
+                "period": 2.729903695,
+                "home_star": "LP 890-9",
+                "dist_from_star": 2228636.646072598
+            },
+            {
+                "name": "LP 890-9 c",
+                "radius": 1.367,
+                "period": 8.457463,
+                "home_star": "LP 890-9",
+                "dist_from_star": 4736248.210825174
+            }
+        ],
+        "numPlanets": 2
+    },
+    "TOI-700": {
+        "name": "TOI-700",
+        "radius": 54.560602884510004,
+        "starMass": 8.79138e+29,
+        "allExo": [
+            {
+                "name": "TOI-700 b",
+                "radius": 0.98075,
+                "period": 9.97713049,
+                "home_star": "TOI-700",
+                "dist_from_star": 5287838.121423083
+            },
+            {
+                "name": "TOI-700 c",
+                "radius": 2.0934,
+                "period": 16.051113196,
+                "home_star": "TOI-700",
+                "dist_from_star": 7260131.520724054
+            },
+            {
+                "name": "TOI-700 d",
+                "radius": 1.18425,
+                "period": 37.424598457500004,
+                "home_star": "TOI-700",
+                "dist_from_star": 12765734.744628713
+            },
+            {
+                "name": "TOI-700 e",
+                "radius": 0.951,
+                "period": 27.80973488,
+                "home_star": "TOI-700",
+                "dist_from_star": 10473028.425768895
+            }
+        ],
+        "numPlanets": 4
+    },
+    "TOI-904": {
+        "name": "TOI-904",
+        "radius": 98.20908519211801,
+        "starMass": 1.4837940000000001e+30,
+        "allExo": [
+            {
+                "name": "TOI-904 b",
+                "radius": 2.3680000000000003,
+                "period": 10.87723741,
+                "home_star": "TOI-904",
+                "dist_from_star": 6668973.234186294
+            },
+            {
+                "name": "TOI-904 c",
+                "radius": 2.254,
+                "period": 83.999549535,
+                "home_star": "TOI-904",
+                "dist_from_star": 26055407.750162084
+            }
+        ],
+        "numPlanets": 2
+    },
+    "TRAPPIST-1": {
+        "name": "TRAPPIST-1",
+        "radius": 54.560602884510004,
+        "starMass": 8.79138e+29,
+        "allExo": [
+            {
+                "name": "TRAPPIST-1 b",
+                "radius": 0.7050000000000001,
+                "period": 1.1331554799999999,
+                "home_star": "TRAPPIST-1",
+                "dist_from_star": 1240130.490691039
+            },
+            {
+                "name": "TRAPPIST-1 c",
+                "radius": 0.7161666666666666,
+                "period": 1.61456696,
+                "home_star": "TRAPPIST-1",
+                "dist_from_star": 1570284.7892776611
+            },
+            {
+                "name": "TRAPPIST-1 d",
+                "radius": 0.5860000000000001,
+                "period": 3.0371523375000002,
+                "home_star": "TRAPPIST-1",
+                "dist_from_star": 2392868.1389182005
+            },
+            {
+                "name": "TRAPPIST-1 e",
+                "radius": 0.5496000000000001,
+                "period": 4.879448558,
+                "home_star": "TRAPPIST-1",
+                "dist_from_star": 3282375.122536468
+            },
+            {
+                "name": "TRAPPIST-1 f",
+                "radius": 0.6272,
+                "period": 7.366744797999999,
+                "home_star": "TRAPPIST-1",
+                "dist_from_star": 4319745.225472818
+            },
+            {
+                "name": "TRAPPIST-1 g",
+                "radius": 0.851,
+                "period": 9.264735425,
+                "home_star": "TRAPPIST-1",
+                "dist_from_star": 5033032.455500277
+            },
+            {
+                "name": "TRAPPIST-1 h",
+                "radius": 0.607,
+                "period": 15.2614281,
+                "home_star": "TRAPPIST-1",
+                "dist_from_star": 7020011.655506824
+            }
+        ],
+        "numPlanets": 7
+    },
+    "Teegarden's Star": {
+        "name": "Teegarden's Star",
+        "radius": 54.560602884510004,
+        "starMass": 8.79138e+29,
+        "allExo": [
+            {
+                "name": "Teegarden's Star b",
+                "radius": 0.0,
+                "period": 4.90817,
+                "home_star": "Teegarden's Star",
+                "dist_from_star": 3295243.011210771
+            },
+            {
+                "name": "Teegarden's Star c",
+                "radius": 0.0,
+                "period": 11.412500000000001,
+                "home_star": "Teegarden's Star",
+                "dist_from_star": 5783555.536619386
+            },
+            {
+                "name": "Teegarden's Star d",
+                "radius": 0.0,
+                "period": 26.13,
+                "home_star": "Teegarden's Star",
+                "dist_from_star": 10046944.188047877
+            }
+        ],
+        "numPlanets": 3
+    },
+    "Wolf 1061": {
+        "name": "Wolf 1061",
+        "radius": 54.560602884510004,
+        "starMass": 8.79138e+29,
+        "allExo": [
+            {
+                "name": "Wolf 1061 b",
+                "radius": 0.0,
+                "period": 4.88725,
+                "home_star": "Wolf 1061",
+                "dist_from_star": 3285872.8456968637
+            },
+            {
+                "name": "Wolf 1061 c",
+                "radius": 0.0,
+                "period": 17.86945,
+                "home_star": "Wolf 1061",
+                "dist_from_star": 7798573.572062864
+            },
+            {
+                "name": "Wolf 1061 d",
+                "radius": 0.0,
+                "period": 142.24,
+                "home_star": "Wolf 1061",
+                "dist_from_star": 31090106.68437271
+            }
+        ],
+        "numPlanets": 3
+    }
+}

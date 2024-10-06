@@ -1,99 +1,37 @@
 // Reads in data.csv and gets the information for each plane in exoPlanets
 import Papa from 'papaparse';
 
-export interface Exoplanet {
-  pl_name: string;
-  hostname: string;
-  default_flag: number;
-  sy_snum: number;
-  sy_pnum: number;
-  discoverymethod: string;
-  disc_year: number;
-  disc_facility: string;
-  soltype: string;
-  pl_controv_flag: number;
-  pl_refname: string;
-  pl_orbper: number;
-  pl_orbpererr1: number;
-  pl_orbpererr2: number;
-  pl_orbperlim: number;
-  pl_orbsmax: number | null;
-  pl_orbsmaxerr1: number | null;
-  pl_orbsmaxerr2: number | null;
-  pl_orbsmaxlim: number | null;
-  pl_rade: number | null;
-  pl_radeerr1: number | null;
-  pl_radeerr2: number | null;
-  pl_radelim: number | null;
-  pl_radj: number | null;
-  pl_radjerr1: number | null;
-  pl_radjerr2: number | null;
-  pl_radjlim: number | null;
-  pl_bmasse: number;
-  pl_bmasseerr1: number;
-  pl_bmasseerr2: number;
-  pl_bmasselim: number;
-  pl_bmassj: number;
-  pl_bmassjerr1: number;
-  pl_bmassjerr2: number;
-  pl_bmassjlim: number;
-  pl_bmassprov: string;
-  pl_orbeccen: number | null;
-  pl_orbeccenerr1: number | null;
-  pl_orbeccenerr2: number | null;
-  pl_orbeccenlim: number | null;
-  pl_insol: number | null;
-  pl_insolerr1: number | null;
-  pl_insolerr2: number | null;
-  pl_insollim: number | null;
-  pl_eqt: number | null;
-  pl_eqterr1: number | null;
-  pl_eqterr2: number | null;
-  pl_eqtlim: number | null;
-  ttv_flag: number;
-  st_refname: string;
-  st_spectype: string | null;
-  st_teff: number;
-  st_tefferr1: number;
-  st_tefferr2: number;
-  st_tefflim: number;
-  st_rad: number;
-  st_raderr1: number;
-  st_raderr2: number;
-  st_radlim: number;
-  st_mass: number;
-  st_masserr1: number;
-  st_masserr2: number;
-  st_masslim: number;
-  st_met: number;
-  st_meterr1: number;
-  st_meterr2: number;
-  st_metlim: number;
-  st_metratio: string;
-  st_logg: number;
-  st_loggerr1: number;
-  st_loggerr2: number;
-  st_logglim: number;
-  sy_refname: string;
-  rastr: string;
-  ra: number;
-  decstr: string;
-  dec: number;
-  sy_dist: number;
-  sy_disterr1: number;
-  sy_disterr2: number;
-  sy_vmag: number;
-  sy_vmagerr1: number;
-  sy_vmagerr2: number;
-  sy_kmag: number;
-  sy_kmagerr1: number;
-  sy_kmagerr2: number;
-  sy_gaiamag: number;
-  sy_gaiamagerr1: number;
-  sy_gaiamagerr2: number;
-  rowupdate: string;
-  pl_pubdate: string;
-  releasedate: string;
+// Define interface for each exoplanet's detailed data
+export interface ExoplanetDetail {
+    name: string;
+    type: string;
+    detection_method: string;
+    mass: number;
+    radius: number;
+    flux: number;
+    Tsurf: string;
+    period: number;
+    edistance: number;
+    age: string;
+    ESI: number;
+}
+
+// Define interface for a star and its corresponding exoplanets
+export interface StarDetail {
+    name: string;
+    radius: number;
+    starMass: number;
+    allExo: StarExoplanet[];
+    numPlanets: number;
+}
+
+// Define interface for individual exoplanets around a star (from the second JSON)
+export interface StarExoplanet {
+    name: string;
+    radius: number;
+    period: number;
+    home_star: string;
+    dist_from_star: number;
 }
 
 export async function readCSV(url: string) {
@@ -103,8 +41,8 @@ export async function readCSV(url: string) {
   // Filter out lines that begin with #
   const filteredData = csvData.split('\n').filter((line) => !line.startsWith('#')).join('\n');
   
-  return new Promise<Exoplanet[]>((resolve, reject) => {
-    Papa.parse<Exoplanet>(filteredData, {
+  return new Promise<ExoplanetDetail[]>((resolve, reject) => {
+    Papa.parse<ExoplanetDetail>(filteredData, {
       header: true,
       complete: (results) => {
         resolve(results.data);
